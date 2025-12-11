@@ -222,7 +222,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.SlimeFun</groupId>
+            <groupId>com.github.Slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
             <version>experimental-SNAPSHOT</version>
             <scope>provided</scope>
