@@ -8,7 +8,6 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
-import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 
 import javax.annotation.Nonnull;
@@ -32,9 +31,12 @@ public final class ItemStackGenerators {
     public static ItemStack createPotion(@Nonnull Color color) {
         ItemStack itemStack = new ItemStack(Material.POTION);
         PotionMeta potionMeta = (PotionMeta) itemStack.getItemMeta();
-        potionMeta.setBasePotionData(new PotionData(PotionType.WATER));
+
+        potionMeta.setBasePotionType(PotionType.WATER);
         potionMeta.setColor(color);
-        potionMeta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        potionMeta.setHideTooltip(true);
+
+        //potionMeta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
         itemStack.setItemMeta(potionMeta);
         return itemStack;
     }
